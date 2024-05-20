@@ -1,0 +1,148 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: black;
+    /* font-family: "sans-serif"; */
+    font-family: "Roboto";
+    line-height: 1.2;
+}
+.bigwrapper{
+
+            padding: 0px 5px;
+            max-width: 1700px;
+            box-sizing: border-box;
+            /* text-align: center; */
+            /* margin: 0px auto; */
+            
+        }
+
+a {
+            text-decoration: none;
+            display: inline-block;
+            color: white;
+        }
+
+.overlay-div{
+        width: 100%;
+        height: 100vh;
+        max-height: 800px;
+        border-radius: 0px 0px 100px 0px;
+        background-image: url('./images/img5.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+         }
+
+.overlay{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    max-height: 800px;
+    opacity: 0.6;
+    position: absolute;
+    border-radius: 0px 0px 100px 0px;
+
+}
+
+.header-div{
+    position: fixed;
+    z-index: 1;
+}
+
+.overlay,.header-div,.text{
+    width:calc(100% - 10px);
+}
+
+header{display: flex;
+        justify-content: space-between; 
+        align-items: center;
+            
+}
+
+
+.logo {
+    width: 100px;
+    
+    /* background-color: white; */
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    /* background-color: white; */
+}
+
+nav {
+    display: flex;
+    width: calc(100vw /2);
+    justify-content: space-around; 
+    align-items: center;
+    margin-right: 10px;
+
+}
+
+.text{
+    z-index: 3;
+    position: absolute;
+    top: 25%;
+    text-align: center;
+    padding: 0px 12%;
+
+    /* background-color: green; */
+}
+h1{color: white;
+   z-index: 2;
+   padding: 10px;
+}
+
+.text p {
+    margin-top: calc(100vh / 50) ;
+    color: white;
+    text-align: justify;
+}
+
+
+
+
+@media screen and (min-width:500px) {
+    .logo {
+        width: 120px;
+    }
+    nav {
+        width: calc(100vw /4);
+    }
+
+}
+
+@media screen and (min-width:750px) {
+    .logo {
+        width: 150px;
+    }
+
+    nav {
+        width: calc(100vw /6);
+    }
+
+    .text{
+        top: 35%;
+    }
+
+}
+
+@media screen and (min-width:1000px) {
+    .logo {
+        width: 200px;
+    }
+    nav {
+        width: calc(100vw /5);
+    }
+    .text{
+        top: 40%;
+    }
+
+}
+
+
+

@@ -1,0 +1,34 @@
+*{font-size: 16px;}
+.text p,h4,.second{font-size: 19px;}
+h3,.third{font-size: 23px;}
+h2,.fourth{font-size: 27px;}
+h1, .fifth{font-size: 33px;}
+/* h1{font-size: 64px;} */
+
+
+/* @media screen and (min-width:750px) {
+
+    *{font-size: 18px;}
+    h4,.second{font-size: 21px;}
+    .text p, h3,.third{font-size: 28px;}
+    h2,.fourth{font-size: 38px;}
+    h1, .fifth{font-size: 50px;}
+} */
+
+@media screen and (min-width:750px) {
+
+    *{font-size: 18px;}
+    h4,.second{font-size: 23px;}
+    p, h3,.third{font-size: 30px;}
+    h2,.fourth{font-size: 40px;}
+    h1, .fifth{font-size: 51px;}
+}
+
+
+
+@media screen and (min-width:1000px) {
+
+
+    .text p, h3,.third{font-size: 30px;}
+   
+}
