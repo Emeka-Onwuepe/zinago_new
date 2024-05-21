@@ -40,7 +40,7 @@ a {
     width: 100%;
     height: 100vh;
     max-height: 800px;
-    opacity: 0.6;
+    opacity: 0.5;
     position: absolute;
     border-radius: 0px 0px 100px 0px;
 
@@ -111,7 +111,7 @@ h1{color: white;
         width: 120px;
     }
     nav {
-        width: calc(100vw /4);
+        width: calc(100vw /3);
     }
 
 }
@@ -121,9 +121,9 @@ h1{color: white;
         width: 150px;
     }
 
-    nav {
+    /* nav {
         width: calc(100vw /6);
-    }
+    } */
 
     .text{
         top: 35%;
