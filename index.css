@@ -76,7 +76,7 @@ header{display: flex;
 
 nav {
     display: flex;
-    width: calc(100vw /2);
+    width: calc((100vw /2) + 20px);
     justify-content: space-around; 
     align-items: center;
     margin-right: 10px;
@@ -111,7 +111,7 @@ h1{color: white;
         width: 120px;
     }
     nav {
-        width: calc(100vw /3);
+        width: calc((100vw /3) + 20px);
     }
 
 }
@@ -136,7 +136,7 @@ h1{color: white;
         width: 200px;
     }
     nav {
-        width: calc(100vw /5);
+        width: calc((100vw /5) + 20px);
     }
     .text{
         top: 40%;
