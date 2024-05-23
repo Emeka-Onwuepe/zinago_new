@@ -105,6 +105,43 @@ h1{color: white;
 }
 
 section{margin-top: 30px;}
+.svg-div{   width: 95%;
+            height: 470px;
+            margin: 0px 2.5%;
+            position: absolute;
+            /* text-align: left; */
+            /* display: flex; */
+            }
+.svgs{
+    width: 65%;
+    height: auto;
+    position: absolute;
+    z-index: -1;
+}
+
+.one{ 
+    top: -10%;
+    left: -10%;
+}
+.two{top: 0%;
+    left: 20%;
+    }
+    
+
+.three{ top: -10%;
+       left: 40%;
+       }
+.four{ top: 30%;
+        left: -10%;
+        
+     }
+.five{ top: 50%;
+    left: 10%;}
+.six{ top: 30%;
+    left: 40%;}
+.seven{top: 60%;
+    left: 30%;}
+
 
 .flex-container {
     display: flex;
@@ -121,7 +158,7 @@ section{margin-top: 30px;}
     margin-bottom: 20px;
     text-align: center;
 }
-
+/* .legal{background-color: #bba7a74d;} */
 
 .shadow{
     /* text-align: justify; */
@@ -135,6 +172,7 @@ section{margin-top: 30px;}
 
 .immigration{
     background-color: #05ffff24;
+    /* background-color: #9decec3f; */
     
 }
 
