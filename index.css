@@ -15,6 +15,7 @@
             box-sizing: border-box;
             /* text-align: center; */
             /* margin: 0px auto; */
+            background-color: #fdfdfd;
             
         }
 
@@ -133,14 +134,15 @@ section{margin-top: 30px;}
        }
 .four{ top: 30%;
         left: -10%;
+        display: none;
         
      }
 .five{ top: 50%;
-    left: 10%;}
-.six{ top: 30%;
+    left: -10%;}
+.six{ top: 60%;
+    left: 20%;}
+.seven{top: 50%;
     left: 40%;}
-.seven{top: 60%;
-    left: 30%;}
 
 
 .flex-container {
@@ -176,14 +178,14 @@ section{margin-top: 30px;}
     
 }
 
-.immigration h3 {
+/* .immigration h3 {
 	text-align: center;
 	margin-bottom: 20px;
 	padding: 10px;
 	background-color: white;
 	width: fit-content;
 	margin: 0px auto;
-}
+} */
 
 @media screen and (min-width:500px) {
     .logo {
