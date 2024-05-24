@@ -141,12 +141,20 @@ section{padding-top: 30px;}
 
 }
 
+
+.hr .service{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+
+
 .hr p{
     text-align: justify;
     padding: 10px 20px;
 }
 
-.service p {text-align: justify;}
+
 
 .service h4 {margin-bottom: 10px;}
 /* .legal{background-color: #bba7a74d;} */
@@ -197,6 +205,11 @@ section{padding-top: 30px;}
 
     .text{
         top: 35%;
+    }
+
+    .hr .service{
+        width: 45%;
+        margin-bottom: 20px;
     }
 
 }
