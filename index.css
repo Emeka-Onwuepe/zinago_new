@@ -120,9 +120,12 @@ section{padding-top: 30px;}
 
 .flex_item,.shadow,.service {
     width: 45%;
+    max-width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     text-align: center;
+    /* align-self: center; */
+    align-content: center;
 }
 .hr{background-image: url('./images/blob6.svg');
     background-position: center;
@@ -131,6 +134,11 @@ section{padding-top: 30px;}
     background-size: contain;
     background-color: #f3f3f3;
 
+}
+
+.hr p{
+    text-align: justify;
+    padding: 10px 20px;
 }
 
 .service p {text-align: justify;}
