@@ -15,7 +15,9 @@
             box-sizing: border-box;
             /* text-align: center; */
             /* margin: 0px auto; */
-            background-color: #fdfdfd;
+            background-color: #fefefe;
+            /* background-color: #ffffff; */
+            /* background-color: #fff; */
             
         }
 
@@ -105,45 +107,7 @@ h1{color: white;
     text-align: justify;
 }
 
-section{margin-top: 30px;}
-.svg-div{   width: 95%;
-            height: 470px;
-            margin: 0px 2.5%;
-            position: absolute;
-            /* text-align: left; */
-            /* display: flex; */
-            }
-.svgs{
-    width: 65%;
-    height: auto;
-    position: absolute;
-    z-index: -1;
-}
-
-.one{ 
-    top: -10%;
-    left: -10%;
-}
-.two{top: 0%;
-    left: 20%;
-    }
-    
-
-.three{ top: -10%;
-       left: 40%;
-       }
-.four{ top: 30%;
-        left: -10%;
-        display: none;
-        
-     }
-.five{ top: 50%;
-    left: -10%;}
-.six{ top: 60%;
-    left: 20%;}
-.seven{top: 50%;
-    left: 40%;}
-
+section{padding-top: 30px;}
 
 .flex-container {
     display: flex;
@@ -154,12 +118,23 @@ section{margin-top: 30px;}
 }
 
 
-.flex_item,.shadow {
+.flex_item,.shadow,.service {
     width: 45%;
     padding: 10px;
     margin-bottom: 20px;
     text-align: center;
 }
+.hr{background-image: url('./images/blob3.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #f1f1f1;
+
+}
+
+.service p {text-align: justify;}
+
+.service h4 {margin-bottom: 10px;}
 /* .legal{background-color: #bba7a74d;} */
 
 .shadow{
