@@ -120,12 +120,16 @@ section{padding-top: 30px;}
 
 .flex_item,.shadow,.service {
     width: 45%;
-    max-width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
+    margin: 0px 20px 20px 20px;
     text-align: center;
     /* align-self: center; */
     align-content: center;
+
+    
+}
+.last{
+    flex-grow: 1;
 }
 .hr{background-image: url('./images/blob6.svg');
     background-position: center;
