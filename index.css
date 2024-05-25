@@ -134,6 +134,19 @@ section{padding-top: 30px;}
     margin: 0px 20px 20px 20px;
 }
 
+#short_story .flex_item{
+    width: 90%;
+}
+
+#short_story p {
+    text-align: justify;
+}
+
+#short_story h4 {
+    margin-bottom: 10px;
+}
+
+
 .hr{background-image: url('./images/blob6.svg');
     background-position: center;
     /* background-repeat: no-repeat; */
@@ -246,6 +259,7 @@ section{padding-top: 30px;}
 
 .write_ups p,.write_ups h4{
     text-align: left;
+    padding: 0px 5px;
 }
 
 #socials {
@@ -263,6 +277,9 @@ footer {
 
 footer p,footer span{
         color: white;
+}
+footer p{
+    padding: 10px;
 }
 
 
@@ -298,6 +315,12 @@ footer p,footer span{
 
 }
 
+@media screen and (min-width:650px) {
+#short_story .flex_item{
+    width: 45%;
+}
+}
+
 @media screen and (min-width:750px) {
     .logo {
         width: 150px;
@@ -310,6 +333,10 @@ footer p,footer span{
     .text{
         top: 35%;
     }
+
+    /* #short_story .flex_item{
+        width: 45%;
+    } */
 
     .hr .service{
         width: 45%;
@@ -333,6 +360,10 @@ footer p,footer span{
     }
     .text{
         top: 40%;
+    }
+
+    #short_story .flex_item{
+        width: 30%;
     }
 
 }
