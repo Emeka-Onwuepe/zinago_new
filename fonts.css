@@ -9,14 +9,10 @@ h3{text-align: center;
 /* h1{font-size: 64px;} */
 
 
-/* @media screen and (min-width:750px) {
+@media screen and (min-width:460px) {
 
-    *{font-size: 18px;}
-    h4,.second{font-size: 21px;}
-    .text p, h3,.third{font-size: 28px;}
-    h2,.fourth{font-size: 38px;}
-    h1, .fifth{font-size: 50px;}
-} */
+    .text p {font-size: 23px;}
+}
 
 @media screen and (min-width:750px) {
 
