@@ -36,11 +36,13 @@ window.addEventListener('scroll', function() {
     backToTop()
 });
 
-document.getElementsByTagName("BODY")[0].onresize = function() {
-    myResize()
-};
+// document.getElementsByTagName("BODY")[0].onresize = function() {
+//     myResize()
+// };
 
 //for Safari and his brothers
 window.addEventListener('scroll', function() {
     backToTop()
 });
+
+// object-fit: cover;
