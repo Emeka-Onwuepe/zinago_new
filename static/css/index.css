@@ -1,0 +1,389 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@800&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.2;
+  text-align: center;
+}
+.bigwrapper {
+  padding: 0px 5px;
+  max-width: 1700px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+}
+
+.overlay-div {
+  width: 100%;
+  height: 100vh;
+  max-height: 800px;
+  border-radius: 0px 0px 100px 0px;
+  background-image: url("./images/img5.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.overlay {
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  max-height: 800px;
+  opacity: 0.5;
+  position: absolute;
+  border-radius: 0px 0px 100px 0px;
+}
+
+.header-div {
+  position: fixed;
+  z-index: 10;
+  background-color: #078888;
+  /* background-color: #05a2a2e1; */
+}
+
+.overlay,
+.header-div,
+.text {
+  width: calc(100% - 10px);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 70px;
+  background-color: white;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  /* background-color: white; */
+}
+
+nav {
+  display: flex;
+  width: calc((100vw / 2) + 65px);
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.text {
+  z-index: 3;
+  position: absolute;
+  top: 20%;
+  text-align: center;
+  padding: 0px 10%;
+
+  /* background-color: green; */
+}
+h1 {
+  color: white;
+  z-index: 2;
+  padding: 10px;
+}
+
+.text > p {
+  margin-top: calc(100vh / 50);
+  color: white;
+  text-align: center;
+}
+
+section {
+  padding-top: 30px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.flex_item,
+.shadow,
+.service {
+  width: 45%;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  align-content: center;
+}
+
+.flex_item img {
+  object-fit: cover;
+}
+
+.last {
+  flex-grow: 1;
+  margin: 0px 20px 20px 20px;
+}
+
+#short_story .flex_item {
+  width: 90%;
+  box-shadow: 0px 2px 2px 3px rgba(190, 180, 180, 0.2);
+  -ms-box-shadow: 0px 2px 2px 3px rgba(190, 180, 180, 0.2);
+  -webkit-box-shadow: 0px 2px 2px 3px rgba(190, 180, 180, 0.2);
+}
+
+#short_story .image_div {
+  margin-bottom: 10px;
+}
+
+#short_story img {
+  height: 300px;
+}
+
+#short_story p {
+  text-align: justify;
+}
+
+#short_story h4 {
+  margin-bottom: 10px;
+}
+
+.hr {
+  background-image: url("./images/blob6.svg");
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  background-repeat: repeat-y;
+  background-size: contain;
+  background-color: #f3f3f3;
+}
+
+.hr .service {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.hr .flex-container,
+.immigration .flex-container,
+.real-estate .flex-container {
+  margin-top: 20px;
+}
+
+.hr p,
+.real-estate p,
+.immigration p {
+  text-align: justify;
+  padding: 10px 20px;
+}
+
+.hr p{
+    padding: 5px 10px;
+}
+
+.hr .last {
+  margin: unset;
+}
+
+.hr .flex_item {
+  width: 100%;
+  margin-bottom: 0px;
+  padding: 10px 10px 0px 10px;
+}
+.hr img {
+  width: 90%;
+}
+
+/* .service h4 {
+  margin-bottom: 0px;
+} */
+/* .legal{background-color: #bba7a74d;} */
+
+.shadow {
+  background-color: #ffffff;
+  box-shadow: 0px 2px 2px 0px rgba(17, 17, 17, 0.35);
+  -ms-box-shadow: 0px 2px 2px 0px rgba(17, 17, 17, 0.35);
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(17, 17, 17, 0.35);
+}
+
+.immigration,.real-estate {
+  background-color: #05ffff24;
+}
+
+.real-estate {
+  background-image: url("./images/blob3.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact_us {
+  background-color: #078888;
+  box-shadow: #f5f5f5 0px 13px 15px;
+  color: white;
+}
+.contact_us h3 {
+  color: white;
+}
+.contact_us a {
+  color: white;
+}
+
+.contact_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.mapbox-iframe {
+  border: 2px dotted white;
+  height: 310px;
+  margin-bottom: 30px;
+}
+
+.map-frame {
+  width: 100%;
+  height: 100%;
+}
+
+.write_ups div {
+  margin-bottom: 20px;
+  margin-right: 10px;
+  text-align: left;
+  width: 285px;
+}
+
+.write_ups p {
+  color: white;
+}
+
+.write_ups p,
+.write_ups h4 {
+  text-align: left;
+  padding: 0px 5px;
+}
+
+#socials {
+  text-align: center;
+}
+
+footer {
+  height: 80px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p,
+footer span {
+  color: white;
+}
+footer p {
+  padding: 10px;
+}
+
+.backToTop {
+  position: fixed;
+  right: 5%;
+  top: 63%;
+  text-align: center;
+  background-color: rgba(1, 1, 1, 0.4);
+  width: 40px;
+  height: 40px;
+  z-index: 150;
+  padding: 2px;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  cursor: pointer;
+  display: none;
+}
+
+.backToTop a {
+  color: white;
+  font-size: 30px;
+}
+
+@media screen and (min-width: 360px) {
+ .logo {
+  width: 100px;
+}
+  nav {
+    width: calc((100vw / 2) + 50px);
+  }
+
+}
+
+@media screen and (min-width: 500px) {
+  .logo {
+    width: 120px;
+  }
+  nav {
+    width: calc((100vw / 3) + 50px);
+  }
+}
+
+@media screen and (min-width: 630px) {
+  #short_story .flex_item {
+    width: 33%;
+  }
+  .hr .flex_item {
+    width: 50%;
+  }
+  .hr_image_div {
+    padding-left: 5%;
+  }
+  .hr img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .logo {
+    width: 150px;
+  }
+
+  .text {
+    top: 35%;
+  }
+
+  .hr .service {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+
+  .hr p,
+  .real-estate p,
+  .immigration p {
+    text-align: justify;
+    padding: 10px 50px;
+  }
+
+  .hr .last {
+    margin: 0px 20px 20px 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .logo {
+    width: 200px;
+  }
+  nav {
+    width: calc((100vw / 5) + 50px);
+  }
+  .text {
+    top: 40%;
+  }
+
+  #short_story .flex_item {
+    width: 30%;
+  }
+}

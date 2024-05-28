@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/publishingdesign.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="{% static 'css/img/logo.png' %}" type="image/png">
+    <link rel="apple-touch-icon" href="{% static 'css/img/logo.png' %}">
+    <link rel="icon" href="{% static 'css/img/logo.png' %}" type="image/png"> {% block title %}
+    <title>Home | Zinago </title>
+    {% endblock title %}
+    <meta name="author" content="Emeka Casper Onwuepe " />
+    <meta name="description" content="A Human Resource and legal firm dedicated to providing professional legal and HR Consulting Services and evolving Recruitment Solutions that help our customers become more productive and profitable." /> {% block keywords %}
+    <meta name="keywords" content="Consulting, Human Resources, Recruitment,law firm, Abuja, Abuja law firm, Services" /> {% endblock keywords %}
+    <meta name="author" content="Emeka Casper Onwuepe " />
+    <meta property="og:url" content="{{request.build_absolute_uri}}" />
+    <meta property="og:type" content="service" />
+    <meta property="og:title" content="Zinago HR and Legal Services" />
+    <meta property="og:description" content="A Human Resource firm dedicated to providing professional HR Consulting Services and evolving Recruitment Solutions that help our customers become more productive and profitable." />
+</head>
+
+<body>
+    <div class="Bigwrapper">
+
+        {% comment %} <header class=".header-div">
+            <section class="menu">
+                <div id="logo-div">
+                        
+                        
+                </div>
+                <nav id="nav" class="nav">
+                    
+                </nav>
+            </section>
+        </header> {% endcomment %}
+
+         <div class="header-div">
+          <header>
+            <div class="logo">
+             {% if user.id %}
+                        <a href="{% url 'publication:publisherView' user.id 0 'view' %}">
+                            <img class="logo" src="{% static 'css/img/logo.png' %}" alt="logo" width="100%">
+                        </a>
+                        {% else %}
+                        <img class="logo" src="{% static 'css/img/logo.png' %}" alt="logo" width="100%">
+            {% endif %}
+            </div>
+            <nav>
+             {% block nav %}
+                    <form action="{% url 'login:logoutView' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">LOGIN</button>
+                    </form>
+                    {% endblock nav %}
+            </nav>
+          </header>
+        </div>
+        <div class="sperator"></div>
+
+        <main>
+            {% block main %}
+
+            {% endblock main %}
+        </main>
+
+         <div
+        onclick="window.scrollTo({top: 0, behavior:'smooth'})"
+        id="backToTop"
+        class="backToTop">
+        <a onclick="window.scrollTo({top: 0, behavior:'smooth'})">&#10094;</a>
+      </div>
+      {% block footer %}
+      <footer>
+        <p id="footer">
+          Copyright &copy; <span id="footerdate" style="padding: 0%"></span>.
+          All rights reserved. www.zinago.ng
+        </p>
+      </footer>
+      {% endblock footer %}
+    </div>
+    <script src="{% static 'javascript/publishingview.js' %}"></script>
+</body>
+
+</html>

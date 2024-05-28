@@ -1,0 +1,12 @@
+{% extends 'publication/base.html' %}{% block nav %} {% endblock nav %} {% block main %}
+
+{% if message %} {{message}} {% endif %}
+<form action="{% url 'users:loginView' %}" method="post" id="loginForm">
+    {% csrf_token %}
+    <div class="loginform">
+        {{form}}
+        <button class='button' id="loginButton" type="submit"> Login</button>
+        <p><a href="{% url 'password_reset' %}">Forgot Password</a></p>
+    </div>
+</form>
+{% endblock main %} 
