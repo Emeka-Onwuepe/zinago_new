@@ -49,6 +49,10 @@ header {
   height: calc(70px / 1.6);
 }
 
+.sperator_2 {
+    height: 200px;
+  }
+
 .logo img {
   width: 100%;
   height: auto;
@@ -74,6 +78,24 @@ main {
   justify-content: space-evenly;
 }
 
+/* .list_items{
+  width: 90%;
+} */
+.flex_item{
+  width: 100%;
+  /* border-right: 1px solid white; */
+}
+.items{
+  padding: 10px;
+  /* margin: 5px; */
+}
+.innerItem{
+  padding: 5px;
+}
+.innerItem p{
+  margin-bottom: 10px;
+}
+
 #socials {
   text-align: center;
 }
@@ -92,27 +114,50 @@ main {
   box-shadow: #ffffff;
 }
 
+button{
+  padding: 3px;
+}
+
+
+
+.delete{
+  color: white;
+  background-color: red;
+  border-color: red;
+}
+
+.edit{
+  color: white;
+  background-color: green;
+  border-color: green;
+}
+
 input,
 textarea,
-.divEditor {
+.divEditor,
+select {
   background-color: #fcfcfc;
+  text-align: left;
 }
 
-input {
-  margin-left: 10px;
+.loginform input {
+  margin: 10px;
 }
 
 input,
-textarea {
-  width: 250px;
+textarea,
+select,
+.divEditor {
+  width: 170px;
   padding: 10px;
 }
 
-.divEditor {
+/* .divEditor {
   width: 300px;
-}
+} */
 
-#divEditor, #divEditor div {
+#divEditor,
+#divEditor div {
   display: block;
   margin: unset;
   text-align: left;
@@ -134,13 +179,15 @@ button {
 }
 
 .formfields {
-  border: 2px solid red;
+  padding: 20px;
+  margin-bottom: 20px;
 }
+
 
 #buttonDiv {
   display: flex;
   position: fixed;
-  width: calc(100vw - 60px);
+  width: calc(100vw - 40px);
   justify-content: space-around;
   flex-wrap: wrap;
   text-align: left;
@@ -162,17 +209,31 @@ button {
   background-color: #ffffff;
 }
 
+#buttonDiv select {
+  width: 100px;
+}
+
 .formfields div {
   display: flex;
-  justify-content: space-around;
+  /* margin-right: 20px; */
+  /* border: 2px solid red; */
+  justify-content: space-evenly;
   margin: 20px auto;
   align-items: center;
+}
+
+.formfields label{
+  /* border: 2px solid red; */
+  width: 155px;
+  /* margin-right: 10px; */
+  text-align: left;
+  /* display: inline; */
 }
 
 .divEditor {
   height: 300px;
   overflow-y: scroll;
-  padding: 8px 10px 8px 20px;
+  /* padding: 8px 10px 8px 20px; */
   background-color: white;
 }
 
@@ -239,12 +300,32 @@ footer p {
   }
 
   input,
-  textarea {
-    width: 300px;
+  textarea,
+  select,
+  .divEditor {
+    width: 200px;
   }
 
-  .divEditor {
+   /* #buttonDiv {
+  width: calc(100vw - 40px);
+  } */
+  /* .divEditor {
     width: 300px;
+  } */
+}
+
+@media screen and (min-width: 400px) {
+
+  #buttonDiv {
+  width: calc(100vw - 60px);
+  }
+  .sperator_2{height: 170px;}
+
+  input,
+  textarea,
+  select,
+  .divEditor {
+    width: 210px;
   }
 }
 
@@ -264,13 +345,20 @@ footer p {
   }
 
   input,
-  textarea {
+  textarea,
+  select,
+  .divEditor {
     width: 300px;
   }
 
-  .divEditor {
+  /* .divEditor {
     width: 400px;
-  }
+  } */
+}
+
+@media screen and (min-width: 540px) {
+
+  .sperator_2{height: 120px;}
 }
 
 @media screen and (min-width: 750px) {
@@ -286,13 +374,15 @@ footer p {
   }
 
   input,
-  textarea {
+  textarea,
+  select,
+  .divEditor {
     width: 400px;
   }
 
-  .divEditor {
+  /* .divEditor {
     width: 500px;
-  }
+  } */
 }
 
 @media screen and (min-width: 1000px) {
@@ -302,9 +392,9 @@ footer p {
   .sperator {
     height: calc(200px / 1.6);
   }
-  .sperator_2 {
+  /* .sperator_2 {
     height: 140px;
-  }
+  } */
   nav {
     width: calc((100vw / 5) + 50px);
   }
@@ -314,11 +404,23 @@ footer p {
   }
 
   input,
-  textarea {
+  textarea,
+  select,
+  .divEditor {
     width: 500px;
   }
 
-  .divEditor {
+ 
+  /* .divEditor {
     width: 650px;
-  }
+  } */
+}
+
+
+@media screen and (min-width: 1400px) {
+
+ .flex_item{
+  width: 50%;
+  /* border-right: 1px solid white; */
+}
 }

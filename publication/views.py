@@ -1,7 +1,7 @@
 from django.shortcuts import render, reverse
 from django.http import  HttpResponseRedirect
 
-from publication.form import ArticleCreationForm,Section_Form
+from publication.form import ArticleCreationForm, PublishArticleForm,Section_Form
 from users.models import Staff,User
 from .models import Section, Article
 # from django.contrib.auth.models import User
@@ -40,7 +40,17 @@ def publisherView(request, userId,sectionId,action):
             kwargs={"userId":user.id,"sectionId":0,"action":"view"}))
         else:
             return render(request,"publication/publisherview.html",
-                  {'article_form':article_form,"form":form,"sectionId":0,"sections":sections,"user": user})  
+                  {'article_form':article_form,"form":form,"sectionId":0,"sections":sections,"user": user}) 
+    
+    if request.method == "POST" and action == "add_post":
+        form = ArticleCreationForm(data= request.POST,files=request.FILES)
+        if form.is_valid():
+            post = form.save()
+            return HttpResponseRedirect(reverse('publication:controlView',
+            kwargs={"sectionId":post.section.id}))
+        else:
+            return render(request,"publication/publisherview.html",
+                  {'article_form':form,"form":form,"sectionId":0,"sections":sections,"user": user}) 
               
     if action == "edit":
         if request.method == "POST":
@@ -78,3 +88,80 @@ def controlView(request,sectionId):
     return render(request, "publication/controlview.html", {'publisher': publisher, "section":section,
                                                           'article': article, "user": request.user})
 
+
+@login_required(login_url="user:loginView")
+def editview(request,article_id,action):
+    article = Article.objects.get(pk=article_id)
+    article_form = ArticleCreationForm(instance=article)
+    if request.method == "POST" and action == 'edit':
+        form = ArticleCreationForm(data= request.POST,files=request.FILES,instance=article)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('publication:controlView',
+            kwargs={"sectionId":article.section.id}))
+             
+    return render(request, "publication/editview.html", {'article_id':article.id,
+                                                         'article_form':article_form})
+
+@login_required(login_url="login:loginView")
+def articlePublisherView(request, article_id):
+    article = Article.objects.get(pk=article_id)
+    # article_sections = Sections.objects.filter(article=article)
+    form = PublishArticleForm(instance=article)
+    nullvalue = "<p>null</p>" or "null"
+    return render(request, "publication/articlePublisherView.html",
+                  {"article": article, "form": form, "nullvalue": nullvalue})
+    
+    
+@login_required(login_url="users:loginView")
+def articleWithdrawView(request, article_id):
+    article = Article.objects.get(pk=article_id)
+    if request.method == "POST":
+        article.publish = False
+        slug = article.title_slug
+        transformedSlug = f"{slug}-transformedslugdjango"
+        article.title_slug = transformedSlug
+        article.save(),
+        return HttpResponseRedirect(reverse('publication:controlView',
+                                            kwargs={"sectionId": article.section.id}))
+        
+
+@login_required(login_url="users:loginView")
+def publishView(request, article_id, article_slug):
+    user = request.user
+    article = Article.objects.get(pk=article_id)
+    form = PublishArticleForm(request.POST, instance=article)
+    if form.is_valid():
+        removeaddedslug = article.title_slug
+        article.title_slug = re.sub(
+            r"(-transformedslugdjango)", "", removeaddedslug)
+        article.save()
+        form.save()
+        messages.add_message(request, messages.INFO,
+                                 "Article published Successfully")
+        return render(request, "publication/articlePublisherView.html",
+                          {"article": article, "user": user})
+    else:
+        return render(request, "publication/articlePublisherView.html",
+                          {"article": article, "user": user, "message": "An Error occured"})
+
+@login_required(login_url="users:loginView")
+def articleDeleteView(request, article_id):
+    article = Article.objects.get(pk=article_id)
+    user = request.user
+    if request.method == "POST":
+        article.delete()
+        return HttpResponseRedirect(reverse('publication:controlView', kwargs={"sectionId": article.section.id}))
+    
+
+@login_required(login_url="users:loginView")
+def close_application(request, article_id, action):
+    article = Article.objects.get(pk=article_id)
+    user = request.user
+    if request.method == "POST" and action == "close":
+        article.still_open = False
+        article.save()
+    else:
+        article.still_open = True
+        article.save()
+    return HttpResponseRedirect(reverse('publication:controlView', kwargs={"sectionId": article.section.id}))

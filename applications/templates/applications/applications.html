@@ -1,11 +1,11 @@
-{% extends 'publisher/register.html' %} {% block nav %}
-<form action="{% url 'login:logoutView' %}" method="post">
+{% extends 'publication/base.html' %} {% block nav %}
+<form action="{% url 'users:logoutView' %}" method="post">
     {% csrf_token %}
     <button type="submit">Sign Out</button>
 </form>
 
 {% endblock nav %} {% block main %}
-<h1 style="margin-top: 125px">{{post}}</h1> {% if total %}
+<h1>{{post}}</h1> {% if total %}
 <p style="padding:10px 20px 0px 10px">You have recieved {{total}} application{{total|pluralize}}. {{selected|length}} selected</p>
 {% else %}
 <p>This Job Posting has not recieved any application yet.</p>

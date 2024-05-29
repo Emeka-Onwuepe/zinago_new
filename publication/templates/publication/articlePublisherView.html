@@ -1,19 +1,19 @@
-{% extends 'publisher/register.html' %} {% block nav %}
+{% extends 'publication/base.html' %} {% block nav %}
 
-<form action="{% url 'publisher:editView' user.username article.id %}" method="post">
+<form action="{% url 'publication:editview' article.id 'view' %}" method="post">
     {% csrf_token %}
     <button type="submit">Edit</button>
 </form>
-<form action="{% url 'login:logoutView' %}" method="post">
+<form action="{% url 'users:logoutView' %}" method="post">
     {% csrf_token %}
     <button type="submit">Sign Out</button>
 </form>
 {% endblock nav %} {% block main %}
-<article class="article" style="margin-top: 135px">
+<article class="article" >
     {% if messages %} {% for message in messages %}
     <p style="color: green">{{ message }}</p>
     {% endfor %} {% endif %}
-    <h1 id="mainHeading" style="padding-bottom: 30px">{{article.title}}</h1>
+    <h1 id="mainHeading">{{article.title}}</h1>
     {% if article.image %}
     <figure class="">
         <img src="{{article.image.url}}" alt="">
@@ -25,22 +25,12 @@
         <h2 class="">{{article.sub_heading}}</h2>
         {% endif %} {{article.body_text|safe}}
     </section>
-    {% for section in sections %}
-    <section>
-        <h2>{{section.sub_heading}}</h2>
-        {% if section.Sub_section_image %}
-        <figure style="margin-bottom: 10px;" class="">
-            <img src="{{section.Sub_section_image.url}}" alt="">
-            <figcaption><em>Image Source: {{section.image_source}}</em></figcaption>
-        </figure>{% endif %} {{section.body_text|safe}}
-    </section>
-    {% endfor %} 
-
+    
     <p class="pub_date">Date of Publication: {{article.mod_date}}</p>
 
-    <a target="blank" href="{% url 'frontview:articleView' article.id article.title_slug %}">VIEW IN MAIN SITE</a>
+    {% comment %} <a target="blank" href="{% url 'frontview:articleView' article.id article.title_slug %}">VIEW IN MAIN SITE</a> {% endcomment %}
     {% if article.publish %}
-    <form action="{% url 'publisher:articleWithdrawView' article.id %}" method="post">
+    <form action="{% url 'publication:articleWithdrawView' article.id %}" method="post">
         {% csrf_token %}
         <button class="submitButton publishButton" type="submit" onclick="return
             confirm('Are you sure you want to withdraw this article ?')">Withdraw</button>
@@ -48,7 +38,7 @@
     
     {% else %} {% if form %} 
     <div class="publishbox">
-        <form action="{% url 'publisher:publishView' article.id article.title_slug %}" method="post">
+        <form action="{% url 'publication:publishView' article.id article.title_slug %}" method="post">
             {% csrf_token %} {{form}}
             <button class="submitButton publishButton" type="submit">Publish</button>
         </form>

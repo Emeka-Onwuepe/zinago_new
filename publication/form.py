@@ -13,3 +13,11 @@ class Section_Form(forms.ModelForm):
         model = Section
         fields = "__all__"
     
+class PublishArticleForm(forms.ModelForm):
+    """Form definition for PublishArticleForm."""
+
+    class Meta:
+        """Meta definition for PublishArticleFormform."""
+
+        model = Article
+        fields = ('publish',)
