@@ -1,0 +1,49 @@
+.sideNav li {
+  list-style: none;
+ padding: 5px;
+}
+
+.article_flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article_flex .sideNav {
+  width: 100%;
+  background-color: #0a6f6f;
+  padding: 0px 10px 10px 10px;
+  overflow-y: scroll;
+}
+
+.sideNav h4 {
+    color: white;
+    padding: 10px;
+}
+
+.article_flex .main {
+  width: 100%;
+
+}
+
+.article_flex section {
+    padding: 0px;
+    
+}
+
+#SearchInput{
+    width: 80%;
+    padding: 5px;
+    border-color: white;
+    margin-bottom: 20px;
+}
+
+
+/* label[for=id_job]{
+    display: none;
+} */
+
+#apply label[for=id_job] {
+    display: none;
+}
+
+/* articles */

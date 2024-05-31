@@ -1,0 +1,31 @@
+{% extends 'home/index.html' %}
+{% load static %}
+  {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/articleview.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css' %}">
+    {% endblock css %}
+{% block header %}
+ <div class="header-div">
+          <header>
+            <div class="logo">
+              <a href="/">
+                <img class="logo" src="{% static 'css/img/logo.png' %}" alt="logo"
+              /></a>
+            </div>
+            <nav>
+              <a href="/">Home</a>
+              <a href="">Contact</a>
+              <a href="">Services</a>
+              <a href="">Jobs</a>
+            </nav>
+          </header>
+        </div>
+        <div class="sperator"></div>
+{% endblock header %}
+{% block mainbody %}{% endblock mainbody %}
+    {% block javascript %}
+    <script src="{% static 'javascript/home.js' %}"></script>
+     <script src="{% static 'javascript/articleview.js' %}"></script>
+    {% endblock javascript %}

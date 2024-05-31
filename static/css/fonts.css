@@ -1,33 +1,76 @@
-*{font-size: 16px;}
-.text p,h4,.second{font-size: 19px;}
-h3,.third{font-size: 23px;}
-h2,.fourth{font-size: 27px;}
-h1, .fifth{font-size: 33px;}
-h3{text-align: center;
-    /* margin-bottom: 10px; */
-    padding: 10px;}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@800&display=swap");
+
+
+* {
+  font-size: 16px;
+}
+
+.lesser, figcaption{
+    font-size: 13px ;
+}
+
+.text p,
+h4,
+.second {
+  font-size: 19px;
+}
+h3,
+.third {
+  font-size: 23px;
+}
+h2,
+.fourth {
+  font-size: 27px;
+}
+h1,
+.fifth {
+  font-size: 33px;
+}
+h3 {
+  text-align: center;
+  /* margin-bottom: 10px; */
+  padding: 10px;
+}
 /* h1{font-size: 64px;} */
 
-
-@media screen and (min-width:460px) {
-
-    .text p {font-size: 23px;}
+@media screen and (min-width: 460px) {
+  .text p {
+    font-size: 23px;
+  }
 }
 
-@media screen and (min-width:750px) {
-
-    *{font-size: 18px;}
-    h4,.second{font-size: 23px;}
-    .text p, h3,.third{font-size: 30px;}
-    h2,.fourth{font-size: 40px;}
-    h1, .fifth{font-size: 51px;}
-}
-
-
-
-@media screen and (min-width:1000px) {
-
-
-    .text p, h3,.third{font-size: 30px;}
+@media screen and (min-width: 750px) {
    
+  * {
+    font-size: 18px;
+  }
+   .lesser, figcaption{
+    font-size: 15px ;
+    }
+  h4,
+  .second {
+    font-size: 23px;
+  }
+  .text p,
+  h3,
+  .third {
+    font-size: 30px;
+  }
+  h2,
+  .fourth {
+    font-size: 40px;
+  }
+  h1,
+  .fifth {
+    font-size: 51px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .text p,
+  h3,
+  .third {
+    font-size: 30px;
+  }
 }

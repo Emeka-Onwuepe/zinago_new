@@ -1,0 +1,102 @@
+{% extends 'home/jobportal.html' %}
+{% load static %}
+{% block title %} 
+    <title>Job Portal | Zinago</title>
+    {% endblock title %} 
+{% block keywords %} 
+<meta name="description" content="{{article.description}}" />
+<meta name="keywords" content="{{article.keywords}}" /> {% for publisher in article.publisher.all %}
+<meta name="author" content="{{publisher}}" /> {% endfor %}
+<meta property="og:url" content="{{request.build_absolute_uri}}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{article.title}}" />
+<meta property="og:description" content="{{article.description}}" /> 
+{% endblock keywords %} 
+
+{% block mainbody %} 
+
+<div class="article_flex">
+
+<aside id="sideNav" class="sideNav">
+<a href="javascript:void(0)" onclick="showNot()" id="close" class="close">&times;</a>
+{% if articles %}
+<a href="{% url 'frontview:sectionView' section %}">
+    <h4 id="">
+    {{section}} Job Posts</h4></a>
+<input type="text" id="SearchInput" onkeyup="SearchFunction()" placeholder="Search posts" id="myInput">
+<ul id="sideNavUL">
+    {% for article in articles %}
+    <li><a class="a" href="{% url 'frontview:articleView' article.id article.title_slug %}">{{article}}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<h3 id="">{{section}} Job Posts</h3>
+<p>No vacancies at the moment</p>
+{% endif %} 
+</aside>
+
+<div class="main">
+
+    <div id="mainhead" class="mainhead">
+        <h2 id="mainHeading">{{article.title}}</h2>
+    </div>
+
+    <div class="articleBox">
+    {% include 'home/social_scripts.html' %}
+    <article class="article">
+        {% if article.image %}
+        <div class="imgcontainer">
+            <figure class="">
+                <img src="{{article.image.url}}" alt="{{article.image_description}}">
+                <figcaption><em>Image Source: {{article.image_source}}</em></figcaption>
+            </figure>
+        </div>
+            {% include 'home/social_share.html' %}
+        {% endif %}
+        <div class="main_article">
+            {% if article.sub_heading %}
+            {% endif %} {{article.body_text|safe}}
+        </div>
+        <p class="pub_date">{{article.mod_date}}</p>
+
+        {% include 'home/social_share.html' %}
+        </article>
+    </div>
+
+    {% if article.still_open %}
+    <form id="apply" action="{% url 'frontview:articleView' article.id article.title_slug %}" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <legend>Application Form</legend>
+    <div class="form_body">
+        {{registrationForm}}
+    </div>
+
+    <button type="submit" class="submitButton button">Apply</button>
+    </form>
+    {% else %}
+    <p>Application Closed</p>
+    {% endif %}
+    {% if mostviewed %}
+<h2>Most Viewed Job Posts</h2>
+<div id="" class="articleInnerBox">
+
+    {% for article in mostviewed %}
+    <section class="articleDisplayBox">
+        <h3><a href="{% url 'frontview:articleView' article.id article.title_slug %}">{{article}}</a></h3>
+        <!-- {% if article.image %}
+        <img class="" src="{{article.image.url}}" alt="{{article.image_description}}">{% endif %} -->
+        <p>{{article.bodySnippet|safe}}</p>
+        <p class="pub_date"> {{article.mod_date}}</p>
+    </section>
+    {% endfor %}
+</div>
+{% endif %} 
+</div>
+</div>
+
+{% if message %}
+<script>
+    alert("{{message}}")
+</script>
+{% endif %}
+{% endblock mainbody %}  

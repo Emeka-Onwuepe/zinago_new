@@ -70,18 +70,19 @@ class Article(models.Model):
             
    
 
-        if self.image:
-            target_height = 333
-            im = Image.open(self.image)
-            width,height=im.size
-            output = BytesIO()
-            newHeight= target_height
-            newWidth= int(newHeight/height*width)
-            im = im.resize((newWidth,newHeight))
-            im.save(output, format='JPEG', quality=100)
-            output.seek(0)
-            self.image = InMemoryUploadedFile(output, 'ImageField', "%s.jpg" % self.image.name.split(
-                    '.')[0], 'image/jpeg', sys.getsizeof(output), None)
+        # if self.image:
+        #     target_height = 350
+        #     im = Image.open(self.image)
+        #     width,height=im.size
+        #     if height > target_height:
+        #         output = BytesIO()
+        #         newHeight= target_height
+        #         newWidth= int(newHeight/height*width)
+        #         im = im.resize((newWidth,newHeight))
+        #         im.save(output, format='JPEG', quality=100)
+        #         output.seek(0)
+        #         self.image = InMemoryUploadedFile(output, 'ImageField', "%s.jpg" % self.image.name.split(
+        #                 '.')[0], 'image/jpeg', sys.getsizeof(output), None)
 
         super().save(*args, **kwargs)  # Call the real save() method
 

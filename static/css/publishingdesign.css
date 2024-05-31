@@ -10,6 +10,17 @@
   line-height: 1.2;
   text-align: center;
 }
+
+main,
+header,
+section,
+aside,
+article,
+nav,
+footer {
+    display: block;
+}
+
 .bigwrapper {
   padding: 0px 5px;
   max-width: 1700px;
@@ -107,7 +118,7 @@ main {
 }
 
 .button {
-  padding: 10px;
+  padding: 5px;
   color: #ffffff;
   background-color: #078888;
   border-color: #078888;
@@ -280,6 +291,13 @@ footer p {
 .backToTop a {
   color: white;
   font-size: 30px;
+}
+
+.divEditor h3,.divEditor h4,
+.divEditor h5,.divEditor h6,
+.divEditor li{
+    text-align: left;
+    /* padding: 10px 0px; */
 }
 
 @media screen and (min-width: 360px) {

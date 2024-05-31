@@ -10,6 +10,17 @@
   line-height: 1.2;
   text-align: center;
 }
+
+main,
+header,
+section,
+aside,
+article,
+nav,
+footer {
+    display: block;
+}
+
 .bigwrapper {
   padding: 0px 5px;
   max-width: 1700px;
@@ -28,7 +39,7 @@ a {
   height: 100vh;
   max-height: 800px;
   border-radius: 0px 0px 100px 0px;
-  background-image: url("./images/img5.jpg");
+  background-image: url("./img/img5.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -156,7 +167,7 @@ section {
 }
 
 .hr {
-  background-image: url("./images/blob6.svg");
+  background-image: url("./img/blob6.svg");
   background-position: center;
   /* background-repeat: no-repeat; */
   background-repeat: repeat-y;
@@ -216,7 +227,7 @@ section {
 }
 
 .real-estate {
-  background-image: url("./images/blob3.svg");
+  background-image: url("./img/blob3.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -275,7 +286,7 @@ section {
 
 footer {
   height: 80px;
-  background-color: black;
+  background-color: #089090;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -294,7 +305,7 @@ footer p {
   right: 5%;
   top: 63%;
   text-align: center;
-  background-color: rgba(1, 1, 1, 0.4);
+  background-color: #078888;
   width: 40px;
   height: 40px;
   z-index: 150;
@@ -311,10 +322,20 @@ footer p {
   font-size: 30px;
 }
 
+.sperator {
+  height: calc(70px / 1.6);
+  /* background-color: #078888; */
+}
+
 @media screen and (min-width: 360px) {
  .logo {
   width: 100px;
 }
+
+.sperator {
+    height: calc(100px / 1.6);
+  }
+
   nav {
     width: calc((100vw / 2) + 50px);
   }
@@ -325,6 +346,11 @@ footer p {
   .logo {
     width: 120px;
   }
+
+  .sperator {
+    height: calc(120px / 1.6);
+  }
+
   nav {
     width: calc((100vw / 3) + 50px);
   }
@@ -349,6 +375,10 @@ footer p {
 @media screen and (min-width: 750px) {
   .logo {
     width: 150px;
+  }
+
+.sperator {
+    height: calc(150px / 1.6);
   }
 
   .text {
@@ -376,6 +406,11 @@ footer p {
   .logo {
     width: 200px;
   }
+
+.sperator {
+    height: calc(200px / 1.6);
+  }
+
   nav {
     width: calc((100vw / 5) + 50px);
   }

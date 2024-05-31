@@ -1,0 +1,124 @@
+
+#mainHeading{
+    padding: 10px;
+}
+.articleBox{
+    padding: 0px 10px;
+}
+
+.imgcontainer img {
+	width: 95%;
+	height: 450px;
+	object-fit: cover;
+}
+
+.article div{
+    text-align: left;
+}
+
+.article p{
+    text-align: justify;
+    padding: 10px 0px;
+}
+
+.article h3,.article h4,
+.article h5,.article h6,
+.article li{
+    text-align: left;
+    padding: 10px 0px;
+}
+
+.article li {
+	padding: 3px;
+	margin-left: 20px;
+}
+
+.main_article :empty{
+    display: none;
+}
+
+
+#apply{
+    padding: 10px;
+}
+#apply div,#apply legend{
+    text-align: left;
+    margin-bottom: 20px;
+
+}
+ 
+
+#apply label {
+	width: 130px;
+	display: inline-block;
+	text-align: left;
+	/* margin-right: 3px; */
+}
+
+#apply input, #apply textarea{
+    width: calc(100vw - 170px);
+}
+
+#apply .button {
+  padding: 5px;
+  width: 150px;
+  color: #ffffff;
+  background-color: #078888;
+  border-color: #078888;
+  box-shadow: #ffffff;
+}
+
+
+
+@media screen and (min-width:500px) {
+#apply label {
+	width: 140px;
+	
+}
+#apply input, #apply textarea{
+    width: calc(100vw - 190px);
+}
+.imgcontainer img {
+	width: 80%;
+}
+#apply #id_cv{
+    width: 300px;
+}
+}
+
+@media screen and (min-width:750px) {
+    .article_flex .sideNav {
+        width: 25%;
+
+    }   
+    .articleBox{
+    padding: 0px 20px;
+    }
+
+    #apply{
+    padding: 20px;
+    }
+
+    .article_flex .main {
+    width: 75%;
+
+    }
+
+    #apply input, #apply textarea{
+    width: calc(70vw - 160px);
+    }
+
+    .imgcontainer img {
+	width: 70%;
+}
+
+}
+
+
+@media screen and (min-width:1000px) {
+
+    #apply input, #apply textarea{
+    width: calc(55vw - 160px);
+    }
+
+}

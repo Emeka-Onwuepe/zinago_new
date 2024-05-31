@@ -9,26 +9,29 @@
     <button type="submit">Sign Out</button>
 </form>
 {% endblock nav %} {% block main %}
-<article class="article" >
-    {% if messages %} {% for message in messages %}
-    <p style="color: green">{{ message }}</p>
-    {% endfor %} {% endif %}
-    <h1 id="mainHeading">{{article.title}}</h1>
-    {% if article.image %}
-    <figure class="">
-        <img src="{{article.image.url}}" alt="">
-        <figcaption><em>Image Source: {{article.image_source}}</em></figcaption>
-    </figure>
-    {% endif %}
-    <section>
-        {% if article.sub_heading %}
-        <h2 class="">{{article.sub_heading}}</h2>
-        {% endif %} {{article.body_text|safe}}
-    </section>
-    
-    <p class="pub_date">Date of Publication: {{article.mod_date}}</p>
 
-    {% comment %} <a target="blank" href="{% url 'frontview:articleView' article.id article.title_slug %}">VIEW IN MAIN SITE</a> {% endcomment %}
+    <div class="articleBox">
+    {% include 'home/social_scripts.html' %}
+    <article class="article">
+        {% if article.image %}
+        <div class="imgcontainer">
+            <figure class="">
+                <img src="{{article.image.url}}" alt="{{article.image_description}}">
+                <figcaption><em>Image Source: {{article.image_source}}</em></figcaption>
+            </figure>
+        </div>
+            {% include 'home/social_share.html' %}
+        {% endif %}
+        <div class="main_article">
+            {% if article.sub_heading %}
+            {% endif %} {{article.body_text|safe}}
+        </div>
+        <p class="pub_date">{{article.mod_date}}</p>
+
+        {% include 'home/social_share.html' %}
+        </article>
+
+        <a target="blank" href="{% url 'frontview:articleView' article.id article.title_slug %}">VIEW IN MAIN SITE</a> 
     {% if article.publish %}
     <form action="{% url 'publication:articleWithdrawView' article.id %}" method="post">
         {% csrf_token %}
@@ -44,7 +47,8 @@
         </form>
     </div>
     {% endif %} {% endif %}
-</article>
+    </div>
+
 <script>
     hidePublishButton()
 
