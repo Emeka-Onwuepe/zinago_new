@@ -5,31 +5,11 @@
 </form>
 
 {% endblock nav %} {% block main %}
-<h1>{{post}}</h1> {% if total %}
-<p style="padding:10px 20px 0px 10px">You have recieved {{total}} application{{total|pluralize}}. {{selected|length}} selected</p>
+<h3>{{post}}</h3> {% if total %}
+<p style="padding:20px">You have recieved {{total}} application{{total|pluralize}}. {{selected|length}} selected</p>
 {% else %}
-<p>This Job Posting has not recieved any application yet.</p>
+<p style="padding:20px">This Job Posting has not recieved any application yet.</p>
 {% endif %}
-
-<section class='applications list_items'>
-    {% for application in applications %}
-    <div class="items">
-        <div class="innerItem">
-            <div>
-                <p>{{application.evelator_speech}}</p>
-            </div>
-            <div class='details'>
-                <p><strong>Name:</strong> {{application.full_name}}</p>
-                <p><strong>Email:</strong> {{application.email}}</p>
-                <p><strong>Phone Number:</strong> {{application.phone_number}}</p>
-                <p><strong>Address:</strong> {{application.address}}</p>
-                <p><a target="_blank" href="{{application.cv.url}}">View CV</a></p>
-                <a href="{% url 'applications:process' application.id 'select' %}"><button>Select</button></a>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-</section>
 
 {% if selected %}
 <div class="tablecontainer">
@@ -61,8 +41,8 @@
                 <td></td>
                 <td> <strong>Employed</strong> </td>
                 {% else %}
-                <td><a href="{% url 'applications:process' application.id 'unselect' %}"><button>Unselect</button></a></td>
-                <td><a href="{% url 'applications:process' application.id 'employed' %}"><button>Employed</button></a></td> {% endif %}
+                <td><a href="{% url 'applications:process' application.id 'unselect' %}"><button class="delete">Unselect</button></a></td>
+                <td><a href="{% url 'applications:process' application.id 'employed' %}"><button class="button">Employ</button></a></td> {% endif %}
 
             </tr>
 
@@ -72,4 +52,26 @@
         </tbody>
     </table>
 </div>
-{% endif %} {% endblock main %}
+{% endif %} 
+
+<section class='applications flex-container'>
+    {% for application in applications %}
+    <div class="items">
+        <div class="innerItem">
+            <div>
+                <p>{{application.evelator_speech}}</p>
+            </div>
+            <div class='details'>
+                <p><strong>Name:</strong> {{application.full_name}}</p>
+                <p><strong>Email:</strong> {{application.email}}</p>
+                <p><strong>Phone Number:</strong> {{application.phone_number}}</p>
+                <p><strong>Address:</strong> {{application.address}}</p>
+                <p><a target="_blank" href="{{application.cv.url}}">View CV</a></p>
+                <a href="{% url 'applications:process' application.id 'select' %}"><button class="button">Select</button></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock main %}

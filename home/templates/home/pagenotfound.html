@@ -1,0 +1,47 @@
+{% extends 'home/jobportal.html' %}
+{% load static %}
+{% block title %} 
+    <title>Job Portal | Zinago</title>
+    {% endblock title %} 
+{% block keywords %} 
+<meta name="description" content="{{article.description}}" />
+<meta name="keywords" content="{{article.keywords}}" /> {% for publisher in article.publisher.all %}
+<meta name="author" content="{{publisher}}" /> {% endfor %}
+<meta property="og:url" content="{{request.build_absolute_uri}}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{article.title}}" />
+<meta property="og:description" content="{{article.description}}" /> 
+{% endblock keywords %} 
+
+{% block mainbody %} 
+
+<div class="article_flex">
+
+<aside id="sideNav" class="sideNav">
+<a href="javascript:void(0)" onclick="showNot()" id="close" class="close">&times;</a>
+{% if articles %}
+<a href="{% url 'frontview:sectionView' section %}">
+    <h4 id="">
+    {{section}} Job Posts</h4></a>
+<input type="text" id="SearchInput" onkeyup="SearchFunction()" placeholder="Search posts" id="myInput">
+<ul id="sideNavUL">
+    {% for article in articles %}
+    <li><a class="a" href="{% url 'frontview:articleView' article.id article.title_slug %}">{{article}}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<h3 id="">{{section}} Job Posts</h3>
+<p>No vacancies at the moment</p>
+{% endif %} 
+</aside>
+
+<div class="main">
+
+  
+    <p style="margin: 50px auto;">This job post you seek seems to be under review. Please, check back later.</p>
+    </div>
+
+   
+</div>
+</div>
+{% endblock mainbody %}  

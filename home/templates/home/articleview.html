@@ -63,6 +63,7 @@
         </article>
     </div>
 
+    <div style="padding: 20px 0px;">
     {% if article.still_open %}
     <form id="apply" action="{% url 'frontview:articleView' article.id article.title_slug %}" enctype="multipart/form-data" method="post">
     {% csrf_token %}
@@ -76,24 +77,28 @@
     {% else %}
     <p>Application Closed</p>
     {% endif %}
-    {% if mostviewed %}
-    <div class="most_viewed">
-        
     </div>
-<h3>Most Viewed Job Posts</h3>
-<div id="" class="articleInnerBox">
+    {% comment %} {% if mostviewed %}
 
-    {% for article in mostviewed %}
-    <section class="articleDisplayBox">
-        <h3><a href="{% url 'frontview:articleView' article.id article.title_slug %}">{{article}}</a></h3>
+    <div class="most_viewed">
+       <h3>Most Viewed Job Posts</h3>
+       <div class="flex-container">
+
+       
+         {% for article in mostviewed %}
+        <div class="articleDisplayBox">
+        <h4><a href="{% url 'frontview:articleView' article.id article.title_slug %}">{{article}}</a></h4>
         <!-- {% if article.image %}
         <img class="" src="{{article.image.url}}" alt="{{article.image_description}}">{% endif %} -->
         <p>{{article.bodySnippet|safe}}</p>
         <p class="pub_date"> {{article.mod_date}}</p>
-    </section>
+        </div>
     {% endfor %}
-</div>
-{% endif %} 
+    </div>
+    {% endif %}  {% endcomment %}
+    </div>
+
+   
 </div>
 </div>
 

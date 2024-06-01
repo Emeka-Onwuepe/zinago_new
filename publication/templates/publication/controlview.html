@@ -5,19 +5,20 @@
 </form>
 
 {% endblock nav %} {% block main %}
-<strong><p >{{section}}</p></strong> {% if article %}
+<strong><h3 >{{section}}</h3></strong> {% if article %}
 <p style="padding:10px 20px 0px 10px">You have written {{article|length}} post{{article|pluralize}}.</p>
 {% else %}
 <p>You have not made any post in this section.</p>
 {% endif %}
 
-<ol class="list_items">
+<ol class="flex-container">
     {% for article in article %}
     <div class="items">
         <div class="innerItem">
             <li>
                 <span><strong>{{article}}</strong></span>
             </li>
+            <p style="padding: 5px;">{{article.pub_date}}</p>
             <div class="buttons1">
                 <form 
                 action="{% url 'publication:editview' article.id 'view' %}" method="post">
@@ -26,7 +27,7 @@
                 </form>
                 <form action="{% url 'publication:articlePublisherView' article.id %}" method="post">
                     {% csrf_token %}
-                    <button type="submit">View</button>
+                    <button  class = 'button_2' type="submit ">View</button>
                 </form>
 
                 <form action="{% url 'publication:articleDeleteView' article.id  %}" method="post">
@@ -39,15 +40,15 @@
             <div class="buttons2">
                 <form action="{% url 'publication:close' article.id 'close' %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" onclick="return confirm('Are you sure you want to close this applications ?')">Close</button>
+                    <button type="submit" class="close_button" onclick="return confirm('Are you sure you want to close this applications ?')">Close</button>
                 </form>
                 <form action="{% url 'applications:applications' article.id  %}" method="post">
                     {% csrf_token %}
-                    <button type="submit">Applications</button>
+                    <button class="button_2" type="submit">Applications</button>
                 </form>
                 <form action="{% url 'publication:articleWithdrawView' article.id  %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" onclick="return confirm('Are you sure you want to withdraw this application ?')">Withdraw</button>
+                    <button type="submit" class="withdraw" onclick="return confirm('Are you sure you want to withdraw this application ?')">Withdraw</button>
                 </form>
             </div>
             {% elif article.publish and not article.still_open %}
@@ -59,11 +60,11 @@
                 </form>
                 <form action="{% url 'applications:applications' article.id  %}" method="post">
                     {% csrf_token %}
-                    <button type="submit">Applications</button>
+                    <button class="button_2" type="submit">Applications</button>
                 </form>
                 <form action="{% url 'publication:articleWithdrawView' article.id  %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" onclick="return confirm('Are you sure you want to withdraw this application ?')">Withdraw</button>
+                    <button type="submit" class="withdraw" onclick="return confirm('Are you sure you want to withdraw this application ?')">Withdraw</button>
                 </form>
             </div>
             {% else %}

@@ -18,7 +18,7 @@ aside,
 article,
 nav,
 footer {
-    display: block;
+  display: block;
 }
 
 .bigwrapper {
@@ -61,8 +61,8 @@ header {
 }
 
 .sperator_2 {
-    height: 200px;
-  }
+  height: 200px;
+}
 
 .logo img {
   width: 100%;
@@ -77,6 +77,15 @@ nav {
   align-items: center;
   margin-right: 10px;
 }
+
+nav button {
+  background-color: #078888;
+  border-color: #078888;
+  color: #ffffff;
+  padding: 5px;
+  width: 100px;
+}
+
 main {
   min-height: calc(100vh - (70px / 1.6) - 80px);
   display: flex;
@@ -92,18 +101,18 @@ main {
 /* .list_items{
   width: 90%;
 } */
-.flex_item{
+.flex_item {
   width: 100%;
   /* border-right: 1px solid white; */
 }
-.items{
+.items {
   padding: 10px;
   /* margin: 5px; */
 }
-.innerItem{
+.innerItem {
   padding: 5px;
 }
-.innerItem p{
+.innerItem p {
   margin-bottom: 10px;
 }
 
@@ -120,24 +129,58 @@ main {
 .button {
   padding: 5px;
   color: #ffffff;
+  width: 150px;
   background-color: #078888;
   border-color: #078888;
   box-shadow: #ffffff;
 }
 
-button{
+.button_2 {
+  padding: 5px;
+  color: #ffffff;
+  /* width: 150px; */
+  background-color: #078888;
+  border-color: #078888;
+  box-shadow: #ffffff;
+}
+
+.innerItem button {
+  width: 120px;
+  height: 30px;
+  margin: 5px;
+}
+
+.innerItem li {
+  list-style: none;
+}
+
+.applications .items li {
+  list-style: none;
+  text-align: justify;
+}
+
+.applications .items p {
+  text-align: justify;
+}
+
+.applications .items {
+  border: 1px solid white;
+  width: 100%;
+  padding: 10px;
+  /* background-color: white; */
+}
+
+button {
   padding: 3px;
 }
 
-
-
-.delete{
+.delete {
   color: white;
   background-color: red;
   border-color: red;
 }
 
-.edit{
+.edit {
   color: white;
   background-color: green;
   border-color: green;
@@ -194,7 +237,6 @@ button {
   margin-bottom: 20px;
 }
 
-
 #buttonDiv {
   display: flex;
   position: fixed;
@@ -233,7 +275,7 @@ button {
   align-items: center;
 }
 
-.formfields label{
+.formfields label {
   /* border: 2px solid red; */
   width: 155px;
   /* margin-right: 10px; */
@@ -254,6 +296,28 @@ button {
   margin: 0px;
   margin-left: 20px;
 }
+
+.tablecontainer{padding: 20px;
+ margin: 0px auto;
+ overflow-x: scroll;
+ max-width: 100%;
+ 
+}
+
+
+.tablecontainer button{
+  padding: 5px;
+}
+
+th, td{
+  padding: 5px;
+  border: 1px solid white;
+}
+.applications{
+  margin: 30px 0px;
+}
+
+
 
 footer {
   height: 80px;
@@ -293,12 +357,36 @@ footer p {
   font-size: 30px;
 }
 
-.divEditor h3,.divEditor h4,
-.divEditor h5,.divEditor h6,
-.divEditor li{
-    text-align: left;
-    /* padding: 10px 0px; */
+.divEditor h3,
+.divEditor h4,
+.divEditor h5,
+.divEditor h6,
+.divEditor li {
+  text-align: left;
+  /* padding: 10px 0px; */
 }
+
+.withdraw {
+  padding: 5px;
+  color: #ffffff;
+  background-color: rgba(255, 0, 0, 0.603);
+  border-color: rgba(255, 0, 0, 0.603);
+}
+.close_button {
+  background-color: green;
+  border-color: green;
+  color: #ffffff;
+}
+.buttons1,
+.buttons2 {
+  display: flex;
+}
+
+.details p{
+  text-align: center;
+}
+
+p{padding: 5px 0px;}
 
 @media screen and (min-width: 360px) {
   .logo {
@@ -324,7 +412,7 @@ footer p {
     width: 200px;
   }
 
-   /* #buttonDiv {
+  /* #buttonDiv {
   width: calc(100vw - 40px);
   } */
   /* .divEditor {
@@ -333,11 +421,12 @@ footer p {
 }
 
 @media screen and (min-width: 400px) {
-
   #buttonDiv {
-  width: calc(100vw - 60px);
+    width: calc(100vw - 60px);
   }
-  .sperator_2{height: 170px;}
+  .sperator_2 {
+    height: 170px;
+  }
 
   input,
   textarea,
@@ -375,8 +464,15 @@ footer p {
 }
 
 @media screen and (min-width: 540px) {
+  .sperator_2 {
+    height: 120px;
+  }
+}
 
-  .sperator_2{height: 120px;}
+@media screen and (min-width: 630px) {
+  .applications .items {
+    width: 46%;
+  }
 }
 
 @media screen and (min-width: 750px) {
@@ -428,17 +524,18 @@ footer p {
     width: 500px;
   }
 
- 
+  .applications .items {
+    width: 33%;
+  }
+
   /* .divEditor {
     width: 650px;
   } */
 }
 
-
 @media screen and (min-width: 1400px) {
-
- .flex_item{
-  width: 50%;
-  /* border-right: 1px solid white; */
-}
+  .flex_item {
+    width: 50%;
+    /* border-right: 1px solid white; */
+  }
 }

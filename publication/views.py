@@ -80,7 +80,7 @@ def publisherView(request, userId,sectionId,action):
     
     
 
-@login_required(login_url="login:loginView")
+@login_required(login_url="users:loginView")
 def controlView(request,sectionId):
     publisher = Staff.objects.get(account=request.user)
     section = Section.objects.get(id=sectionId)
@@ -103,7 +103,7 @@ def editview(request,article_id,action):
     return render(request, "publication/editview.html", {'article_id':article.id,
                                                          'article_form':article_form})
 
-@login_required(login_url="login:loginView")
+@login_required(login_url="users:loginView")
 def articlePublisherView(request, article_id):
     article = Article.objects.get(pk=article_id)
     # article_sections = Sections.objects.filter(article=article)

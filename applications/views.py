@@ -6,7 +6,7 @@ from publication.models import Article
 from users.models import Staff
 from .models import Application
 # Create your views here.
-@login_required(login_url="login:loginView")
+@login_required(login_url="users:loginView")
 def applicationView(request, article_id):
     post = None
     try: 
@@ -23,7 +23,7 @@ def applicationView(request, article_id):
                                                             'selected':selected
                                                             })
     
-@login_required(login_url="login:loginView")
+@login_required(login_url="users:loginView")
 def process_application(request,app_id,action):
     application = None
     

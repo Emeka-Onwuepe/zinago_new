@@ -54,7 +54,7 @@
             </div>
             <nav>
              {% block nav %}
-                    <form action="{% url 'login:logoutView' %}" method="post">
+                    <form action="{% url 'users:logoutView' %}" method="post">
                         {% csrf_token %}
                         <button type="submit">LOGIN</button>
                     </form>
